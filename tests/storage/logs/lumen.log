@@ -1,0 +1,67 @@
+[2017-02-03 15:05:51] lumen.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Illuminate\Support\ServiceProvider::mergeConfigFrom(): Failed opening required '/var/www/application/laraswagger/src/Providers/../../config/laswagger.php' (include_path='.:/usr/local/lib/php') in /var/www/application/laraswagger/vendor/illuminate/support/ServiceProvider.php:59
+Stack trace:
+#0 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(54): Laravel\Lumen\Application->handleShutdown()
+#1 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
+#2 {main}  
+[2017-02-03 15:06:21] lumen.ERROR: InvalidArgumentException: The "no-cache" directory does not exist. in /var/www/application/laraswagger/vendor/symfony/finder/Finder.php:546
+Stack trace:
+#0 /var/www/application/laraswagger/vendor/zircote/swagger-php/src/Util.php(90): Symfony\Component\Finder\Finder->in('no-cache')
+#1 /var/www/application/laraswagger/vendor/zircote/swagger-php/src/functions.php(39): Swagger\Util::finder(Array, Array)
+#2 /var/www/application/laraswagger/src/Swagger/SwaggerGenerator.php(42): Swagger\scan(Array, Array)
+#3 /var/www/application/laraswagger/src/Http/Controllers/SwaggerController.php(41): Laswagger\Swagger\SwaggerGenerator->generateDocs()
+#4 [internal function]: Laswagger\Http\Controllers\SwaggerController->index(Object(Illuminate\Http\Request))
+#5 /var/www/application/laraswagger/vendor/illuminate/container/BoundMethod.php(28): call_user_func_array(Array, Array)
+#6 /var/www/application/laraswagger/vendor/illuminate/support/helpers.php(912): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#7 /var/www/application/laraswagger/vendor/illuminate/container/BoundMethod.php(86): value(Object(Closure))
+#8 /var/www/application/laraswagger/vendor/illuminate/container/BoundMethod.php(30): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Array, Object(Closure))
+#9 /var/www/application/laraswagger/vendor/illuminate/container/Container.php(524): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Array, Array, NULL)
+#10 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(742): Illuminate\Container\Container->call(Array, Array)
+#11 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(685): Laravel\Lumen\Application->callControllerCallable(Array, Array)
+#12 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(644): Laravel\Lumen\Application->callControllerAction(Array)
+#13 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(629): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#14 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(528): Laravel\Lumen\Application->handleFoundRoute(Array)
+#15 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(782): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
+#16 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(534): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#17 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(458): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
+#18 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Testing/Concerns/MakesHttpRequests.php(334): Laravel\Lumen\Application->handle(Object(Illuminate\Http\Request))
+#19 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Testing/Concerns/MakesHttpRequests.php(62): Laravel\Lumen\Testing\TestCase->call('GET', '/swagger/api-do...', Array, Array, Array, Array)
+#20 /var/www/application/laraswagger/tests/LumenApplicationTest.php(138): Laravel\Lumen\Testing\TestCase->get('/swagger/api-do...')
+#21 [internal function]: Laswagger\Test\LumenApplicationTest->testControllerWithCors(Array, Array, Array, Array, Array)
+#22 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestCase.php(1121): ReflectionMethod->invokeArgs(Object(Laswagger\Test\LumenApplicationTest), Array)
+#23 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestCase.php(972): PHPUnit_Framework_TestCase->runTest()
+#24 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestResult.php(709): PHPUnit_Framework_TestCase->runBare()
+#25 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestCase.php(927): PHPUnit_Framework_TestResult->run(Object(Laswagger\Test\LumenApplicationTest))
+#26 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestSuite.php(728): PHPUnit_Framework_TestCase->run(Object(PHPUnit_Framework_TestResult))
+#27 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestSuite.php(728): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#28 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestSuite.php(728): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#29 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/TextUI/TestRunner.php(491): PHPUnit_Framework_TestSuite->run(Object(PHPUnit_Framework_TestResult))
+#30 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/TextUI/Command.php(188): PHPUnit_TextUI_TestRunner->doRun(Object(PHPUnit_Framework_TestSuite), Array, true)
+#31 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/TextUI/Command.php(118): PHPUnit_TextUI_Command->run(Array, true)
+#32 /var/www/application/laraswagger/vendor/phpunit/phpunit/phpunit(52): PHPUnit_TextUI_Command::main()
+#33 {main}  
+[2017-02-03 15:30:39] lumen.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Uncaught ErrorException: Array to string conversion in /var/www/application/laraswagger/tests/LumenApplicationTest.php:99
+Stack trace:
+#0 /var/www/application/laraswagger/tests/LumenApplicationTest.php(99): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Array to string...', '/var/www/applic...', 99, Array)
+#1 [internal function]: Laswagger\Test\LumenApplicationTest->testController(Array, Array)
+#2 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestCase.php(1121): ReflectionMethod->invokeArgs(Object(Laswagger\Test\LumenApplicationTest), Array)
+#3 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestCase.php(972): PHPUnit_Framework_TestCase->runTest()
+#4 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestResult.php(709): PHPUnit_Framework_TestCase->runBare()
+#5 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestCase.php(927): PHPUnit_Framework_TestResult->run(Object(Laswagger\Test\LumenApplicationTest))
+#6 in /var/www/application/laraswagger/tests/LumenApplicationTest.php:99
+Stack trace:
+#0 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(54): Laravel\Lumen\Application->handleShutdown()
+#1 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
+#2 {main}  
+[2017-02-03 15:30:47] lumen.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Uncaught ErrorException: Array to string conversion in /var/www/application/laraswagger/tests/LumenApplicationTest.php:99
+Stack trace:
+#0 /var/www/application/laraswagger/tests/LumenApplicationTest.php(99): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Array to string...', '/var/www/applic...', 99, Array)
+#1 [internal function]: Laswagger\Test\LumenApplicationTest->testController(Array, Array)
+#2 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestCase.php(1121): ReflectionMethod->invokeArgs(Object(Laswagger\Test\LumenApplicationTest), Array)
+#3 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestCase.php(972): PHPUnit_Framework_TestCase->runTest()
+#4 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestResult.php(709): PHPUnit_Framework_TestCase->runBare()
+#5 /var/www/application/laraswagger/vendor/phpunit/phpunit/src/Framework/TestCase.php(927): PHPUnit_Framework_TestResult->run(Object(Laswagger\Test\LumenApplicationTest))
+#6 in /var/www/application/laraswagger/tests/LumenApplicationTest.php:99
+Stack trace:
+#0 /var/www/application/laraswagger/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(54): Laravel\Lumen\Application->handleShutdown()
+#1 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
+#2 {main}  
